@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service 🍇</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{
+  --c-light:#a8e6a3;--c-mid:#4caf50;--c-dark:#1b5e20;--c-neon:#69ff47;
+  --c-bg1:#c8f5c4;--c-bg2:#e8fde8;
+  --c-glass:rgba(255,255,255,0.32);--c-text:#1b3a1e;--c-text2:#3a5c3d;
+  --c-card:rgba(255,255,255,0.52);--c-shadow:rgba(76,175,80,0.20);--c-border:rgba(76,175,80,0.28);
+  --r-lg:22px;--r-md:14px;--tr:0.36s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"]{
+  --c-bg1:#061508;--c-bg2:#0c2410;--c-glass:rgba(8,35,12,0.62);
+  --c-text:#c8f5c4;--c-text2:#80c080;--c-card:rgba(12,45,18,0.72);
+  --c-shadow:rgba(105,255,71,0.13);--c-border:rgba(105,255,71,0.20);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:var(--c-text);background:var(--c-bg1);overflow-x:hidden;transition:background var(--tr),color var(--tr);min-height:100vh;}
+ 
+/* BG */
+.bg-wrap{position:fixed;inset:0;z-index:-2;background:linear-gradient(135deg,var(--c-bg1) 0%,var(--c-bg2) 40%,var(--c-light) 70%,var(--c-bg1) 100%);background-size:400% 400%;animation:bgS 16s ease infinite;}
+@keyframes bgS{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+#cv{position:fixed;inset:0;z-index:-1;pointer-events:none;}
+ 
+/* GLASS */
+.glass{background:var(--c-card);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--c-border);border-radius:var(--r-lg);box-shadow:0 8px 40px var(--c-shadow);transition:background var(--tr),border-color var(--tr);}
+ 
+/* LAYOUT */
+main{max-width:780px;margin:0 auto;padding:32px 20px 80px;display:flex;flex-direction:column;gap:24px;}
+ 
+/* TOPBAR */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;position:sticky;top:16px;z-index:100;}
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border:none;border-radius:99px;background:var(--c-glass);border:1px solid var(--c-border);color:var(--c-dark);font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all var(--tr);}
+.back-btn:hover{background:var(--c-mid);color:#fff;transform:translateX(-3px);box-shadow:0 6px 20px var(--c-shadow);}
+.dk-btn{width:38px;height:38px;border:none;border-radius:99px;display:flex;align-items:center;justify-content:center;background:var(--c-glass);border:1px solid var(--c-border);color:var(--c-dark);font-size:1rem;cursor:pointer;transition:all var(--tr);}
+.dk-btn:hover{background:var(--c-mid);color:#fff;transform:scale(1.1);}
+ 
+/* HERO */
+.hero-header{text-align:center;padding:52px 32px 44px;position:relative;overflow:hidden;}
+.hero-header::before{content:'';position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,var(--c-light) 0%,transparent 68%);top:-80px;left:50%;transform:translateX(-50%);opacity:.5;pointer-events:none;animation:pulse 5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.12)}}
+.hero-icon{font-size:3.5rem;margin-bottom:16px;display:block;animation:floatIc 3s ease-in-out infinite;}
+@keyframes floatIc{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-title{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;color:var(--c-dark);margin-bottom:10px;line-height:1.2;}
+.hero-title span{color:var(--c-mid);}
+.hero-sub{font-size:1rem;color:var(--c-text2);font-weight:500;}
+.hero-sub span{color:var(--c-mid);}
+.updated-badge{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:6px 16px;border-radius:99px;font-size:.78rem;font-weight:600;background:var(--c-glass);border:1px solid var(--c-border);color:var(--c-text2);}
+ 
+/* IMPORTANT NOTE */
+.note-card{
+  display:flex;align-items:flex-start;gap:14px;padding:18px 22px;
+  background:linear-gradient(135deg,rgba(255,243,180,.7),rgba(255,230,100,.4));
+  border:1px solid rgba(200,160,0,.3);border-radius:var(--r-md);
+  font-size:.88rem;color:#5a4200;line-height:1.7;
+}
+[data-theme="dark"] .note-card{background:rgba(80,60,0,.4);color:#ffd970;border-color:rgba(200,160,0,.25);}
+.note-card i{font-size:1.2rem;color:#d4a000;margin-top:2px;flex-shrink:0;}
+ 
+/* SECTION CARDS */
+.sec-card{padding:36px;transition:transform var(--tr),box-shadow var(--tr);}
+.sec-card:hover{transform:translateY(-3px);box-shadow:0 16px 50px var(--c-shadow);}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.sec-ic{width:46px;height:46px;border-radius:14px;flex-shrink:0;background:linear-gradient(135deg,var(--c-light),var(--c-mid));display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;box-shadow:0 4px 14px var(--c-shadow);}
+.sec-num{font-size:.73rem;font-weight:600;color:var(--c-mid);letter-spacing:1px;margin-bottom:2px;}
+.sec-title{font-size:1.1rem;font-weight:700;color:var(--c-dark);}
+.sec-body{font-size:.93rem;line-height:1.85;color:var(--c-text2);}
+.sec-body p{margin-bottom:12px;}
+.sec-body p:last-child{margin-bottom:0;}
+.sec-body strong{color:var(--c-dark);font-weight:700;}
+ 
+/* Item list */
+.item-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+.item-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--c-glass);border:1px solid var(--c-border);border-radius:var(--r-md);font-size:.88rem;line-height:1.6;color:var(--c-text2);transition:background var(--tr),transform var(--tr);}
+.item-list li:hover{background:rgba(76,175,80,.1);transform:translateX(4px);}
+.item-list li .li-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--c-light),var(--c-mid));color:#fff;font-size:.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+ 
+/* PROHIBITED ITEMS – red tint */
+.item-list.danger li{border-color:rgba(239,68,68,.2);}
+.item-list.danger li:hover{background:rgba(239,68,68,.06);}
+.item-list.danger li .li-dot{background:linear-gradient(135deg,#fca5a5,#ef4444);}
+ 
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px;}
+.contact-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--c-glass);border:1px solid var(--c-border);border-radius:var(--r-md);text-decoration:none;color:var(--c-text);font-weight:600;font-size:.87rem;transition:all var(--tr);}
+.contact-item:hover{background:var(--c-mid);color:#fff;transform:translateY(-3px);box-shadow:0 8px 24px var(--c-shadow);}
+.contact-item i{font-size:1.1rem;color:var(--c-mid);transition:color .3s;}
+.contact-item:hover i{color:#fff;}
+ 
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--c-border),transparent);border-radius:99px;}
+ 
+/* REVEAL */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.rev.vis{opacity:1;transform:translateY(0);}
+ 
+/* FOOTER */
+.footer{text-align:center;font-size:.78rem;color:var(--c-text2);padding:8px 0;}
+.footer a{color:var(--c-mid);text-decoration:none;font-weight:600;}
+.footer a:hover{text-decoration:underline;}
+ 
+/* LEAVES */
+.lf{position:fixed;pointer-events:none;z-index:0;animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-60px) rotate(0deg);opacity:.7;}50%{transform:translateY(45vh) rotate(180deg) translateX(22px);}100%{transform:translateY(108vh) rotate(360deg) translateX(-16px);opacity:0;}}
+ 
+@media(max-width:600px){
+  main{padding:14px 10px 60px;gap:16px;}
+  .hero-header{padding:36px 16px 30px;}
+  .sec-card{padding:22px 18px;}
+  .hero-title{font-size:1.7rem;}
+}
+</style>
+</head>
+<body>
+ 
+<div class="bg-wrap"></div>
+<canvas id="cv"></canvas>
+ 
+<main>
+  <!-- TOPBAR -->
+  <nav class="topbar glass rev">
+    <a class="back-btn" href="bio.html">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+    <button class="dk-btn" id="dkBtn">
+      <i class="fa-solid fa-moon" id="dkIc"></i>
+    </button>
+  </nav>
+ 
+  <!-- HERO -->
+  <header class="hero-header glass rev">
+    <span class="hero-icon">⚖️</span>
+    <h1 class="hero-title">Terms of <span>Service</span></h1>
+    <p class="hero-sub">Please read these terms carefully <span>💚</span></p>
+    <div class="updated-badge">
+      <i class="fa-solid fa-clock"></i>
+      Last updated: 25/03/2026
+    </div>
+  </header>
+ 
+  <!-- NOTICE -->
+  <div class="note-card glass rev">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span>Bằng cách truy cập hoặc sử dụng trang web này, bạn đồng ý chịu ràng buộc bởi các Điều khoản Dịch vụ này. Nếu bạn không đồng ý với bất kỳ phần nào của các điều khoản này, vui lòng không sử dụng trang web của chúng tôi.</span>
+  </div>
+ 
+  <div class="divider rev"></div>
+ 
+  <!-- 1. ACCEPTANCE -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-file-signature"></i></div>
+      <div>
+        <div class="sec-num">SECTION 01</div>
+        <div class="sec-title">Acceptance of Terms</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>Khi bạn truy cập hoặc sử dụng trang web này, bạn xác nhận rằng bạn đã đọc, hiểu và đồng ý bị ràng buộc bởi các Điều khoản Dịch vụ này.</p>
+      <p>These terms apply to all visitors, users, and others who access or use the website. We reserve the right to update these terms at any time without prior notice.</p>
+      <ul class="item-list">
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span>Việc tiếp tục sử dụng trang web sau khi điều khoản thay đổi đồng nghĩa với việc bạn chấp nhận điều khoản mới.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span>Bạn phải từ 13 tuổi trở lên để sử dụng trang web này.</span></li>
+      </ul>
+    </div>
+  </article>
+ 
+  <!-- 2. ACCEPTABLE USE -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-scale-balanced"></i></div>
+      <div>
+        <div class="sec-num">SECTION 02</div>
+        <div class="sec-title">Acceptable Use</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>You agree to use this website only for lawful purposes and in a manner that does not infringe the rights of others. The following actions are strictly <strong>prohibited</strong>:</p>
+      <ul class="item-list danger">
+        <li><span class="li-dot"><i class="fa-solid fa-xmark"></i></span><span><strong>Misuse:</strong> Sử dụng trang web sai mục đích hoặc cố ý làm tổn hại đến người dùng khác.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-xmark"></i></span><span><strong>Illegal activities:</strong> Thực hiện bất kỳ hành động nào vi phạm pháp luật hiện hành.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-xmark"></i></span><span><strong>Hacking / scraping:</strong> Tấn công, khai thác dữ liệu trái phép, hoặc can thiệp vào hệ thống kỹ thuật của trang web.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-xmark"></i></span><span><strong>Impersonation:</strong> Giả mạo danh tính của cá nhân hoặc tổ chức khác.</span></li>
+      </ul>
+    </div>
+  </article>
+ 
+  <!-- 3. CONTENT OWNERSHIP -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-copyright"></i></div>
+      <div>
+        <div class="sec-num">SECTION 03</div>
+        <div class="sec-title">Content Ownership</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>All content published on this website — including text, graphics, design, code, and visual elements — is the intellectual property of the website owner.</p>
+      <ul class="item-list">
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span><strong>All rights reserved:</strong> Nội dung thuộc về chủ sở hữu trang web và được bảo vệ bởi luật bản quyền.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span><strong>No reproduction:</strong> Bạn không được sao chép, phân phối hoặc tái sử dụng bất kỳ nội dung nào mà không có sự cho phép bằng văn bản.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span><strong>Attribution:</strong> Nếu được phép chia sẻ, vui lòng ghi rõ nguồn và link về trang gốc.</span></li>
+      </ul>
+    </div>
+  </article>
+ 
+  <!-- 4. LIMITATION OF LIABILITY -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-circle-exclamation"></i></div>
+      <div>
+        <div class="sec-num">SECTION 04</div>
+        <div class="sec-title">Limitation of Liability</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>This website is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without any warranties of any kind.</p>
+      <ul class="item-list">
+        <li><span class="li-dot"><i class="fa-solid fa-circle-info"></i></span><span><strong>No guarantee:</strong> Chúng tôi không đảm bảo rằng trang web sẽ luôn hoạt động liên tục, không có lỗi hoặc bảo mật hoàn toàn.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-circle-info"></i></span><span><strong>No damage liability:</strong> Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại trực tiếp hay gián tiếp nào phát sinh từ việc sử dụng trang web.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-circle-info"></i></span><span><strong>Third-party links:</strong> Các liên kết bên ngoài được cung cấp chỉ mang tính tham khảo — chúng tôi không kiểm soát nội dung của chúng.</span></li>
+      </ul>
+    </div>
+  </article>
+ 
+  <!-- 5. CHANGES TO TERMS -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-rotate"></i></div>
+      <div>
+        <div class="sec-num">SECTION 05</div>
+        <div class="sec-title">Changes to Terms</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>We reserve the right to modify or replace these Terms at any time at our sole discretion.</p>
+      <ul class="item-list">
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span>Điều khoản có thể được cập nhật bất cứ lúc nào mà không cần thông báo trước.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span>Ngày cập nhật mới nhất sẽ luôn được hiển thị tại đầu trang.</span></li>
+        <li><span class="li-dot"><i class="fa-solid fa-check"></i></span><span>Nếu bạn không đồng ý với các thay đổi, vui lòng ngừng sử dụng trang web.</span></li>
+      </ul>
+    </div>
+  </article>
+ 
+  <!-- 6. CONTACT -->
+  <article class="sec-card glass rev">
+    <div class="sec-head">
+      <div class="sec-ic"><i class="fa-solid fa-envelope"></i></div>
+      <div>
+        <div class="sec-num">SECTION 06</div>
+        <div class="sec-title">Contact</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <p>If you have any questions about these Terms of Service, please contact us:</p>
+      <div class="contact-grid">
+        <!-- 📝 Đổi email và link -->
+        <a class="contact-item" href="mailto:koishykana@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+          <span>koishykana@gmail.com</span>
+        </a>
+        <a class="contact-item" href="bio.html">
+          <i class="fa-solid fa-house"></i>
+          <span>Back to Homepage</span>
+        </a>
+      </div>
+    </div>
+  </article>
+ 
+  <div class="divider rev"></div>
+ 
+  <footer class="footer rev">
+    <p>🍇 © 2026 <strong>young_ether</strong> · <a href="bio.html">Home</a> · <a href="p.html">Privacy Policy</a></p>
+    <p style="margin-top:5px;opacity:.55;">These terms are effective as of 25/3/2026</p>
+  </footer>
+</main>
+ 
+<script>
+/* DARK MODE */
+(function(){
+  const btn=document.getElementById('dkBtn'),ic=document.getElementById('dkIc');
+  const set=t=>{document.documentElement.setAttribute('data-theme',t);localStorage.setItem('th',t);ic.className=t==='dark'?'fa-solid fa-sun':'fa-solid fa-moon';};
+  set(localStorage.getItem('th')||'light');
+  btn.addEventListener('click',()=>set(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'));
+})();
+ 
+/* SCROLL REVEAL */
+(function(){
+  const io=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting){e.target.style.transitionDelay=(i*.05)+'s';e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+})();
+ 
+/* PARTICLES */
+(function(){
+  const cv=document.getElementById('cv'),cx=cv.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  const cols=['#a8e6a3','#4caf50','#69ff47','#c8f5c4'];
+  class P{constructor(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-.5)*.45;this.vy=(Math.random()-.5)*.45;this.r=Math.random()*2+.7;this.c=cols[~~(Math.random()*cols.length)];this.o=Math.random()*.5+.2;}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W)this.vx*=-1;if(this.y<0||this.y>H)this.vy*=-1;}draw(){cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fillStyle=this.c;cx.globalAlpha=this.o;cx.fill();cx.globalAlpha=1;}}
+  for(let i=0;i<55;i++)pts.push(new P());
+  (function loop(){cx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.strokeStyle=`rgba(76,175,80,${(1-d/110)*.28})`;cx.lineWidth=.7;cx.stroke();}}}pts.forEach(p=>{p.update();p.draw();});requestAnimationFrame(loop);})();
+})();
+ 
+/* LEAVES */
+(function(){
+  const arr=['🍃','🌿','🍀','🌱'];
+  for(let i=0;i<10;i++){const l=document.createElement('div');l.className='lf';l.textContent=arr[~~(Math.random()*arr.length)];const dur=9+Math.random()*12,dl=Math.random()*12;l.style.cssText=`left:${Math.random()*100}%;font-size:${.65+Math.random()*.7}rem;animation-duration:${dur}s;animation-delay:${-dl}s;`;document.body.appendChild(l);}
+})();
+</script>
+</body>
+</html>
+ 
